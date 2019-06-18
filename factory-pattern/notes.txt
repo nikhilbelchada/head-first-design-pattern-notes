@@ -1,0 +1,5 @@
+Factory Pattern
+defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+Factory Method lets a class defer instantiation to subclasses.
+
+It is useful if you've only got one concrete creator because you are decoupling the implmentation of the product from its use.

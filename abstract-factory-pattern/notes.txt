@@ -1,0 +1,60 @@
+Taking example of Factory Pattern and thinking of dependency inversion principle (refer notes)
+
+Inveting your thinking
+
+PizzaStore prepares, bakes and box pizzas. So store needs to be able to make bunch of different pizzas
+CheesePizza, VeggiePizza etc should share a Pizza interface.
+Since now have a Pizza abstraction, we can design PizzaStore not worrying about concrete pizza classes.
+
+
+Few guidelines
+No vairable should hold reference to a concrete class
+No class should derive from concrete class
+No method should override an implemented methods of any of its base classes.
+
+Pizza's success has always been fresh, quality ingredients.
+How to ensure quality of ingredients?
+The franchises are located in different regions and what red sauce in NY is not red sauce in Chicago.
+
+Chicago Menu                        NY Menu
+Cheese Pizza                        Cheese Pizza
+  Plum TOmato Sauce,                Marinara Sauce, Reggiano, Garlic
+  Mozzarella, Oregano
+Veggie Pizza                        Veggie Pizza
+  Plum Tomato Sauce, Eggplant,      Marinara Sauce, Mushrooms, Onions, Red pepers
+  Spinach, Black Olives
+
+So Pizzas are made from same components, but each region has different implementation of those components.
+Each family consist of type of dough, sauce, cheese and seafood topping
+
+In short, all regions make up ingredient families with each region implementing complete family of ingredients
+
+An Abstract Factory
+------------------
+Gives us an interface for creating a family of products. By writing code that use this interface, we decouple our
+code from actual factory that creates the products.
+That allows us to implement a variety of factories that produce products meant for different contexts - such as
+retions, different os, or different look and feels
+
+definition:
+Provides an interface for creating families of related or dependent objects whithout specifying their concrete classes.
+
+It is noticed that each method in Abstract Factory actually looks like a Factory Method (createDough(), createSauce(), etc.).
+Each methods is declared abstract and subclasses override it to create some object. Isn't that Factory Method?
+Ans. Often the methods of an Abstract Factory are implemeted as factory methods. It makes sense, right? The job of an
+Abstract factory is to define an interface for creating a set of products.
+Each method is that interface is responsible for creating a concrete product, and we implement a subclass of the Abstract
+Factory to supply those implementations.
+
+
+DIfference
+FactoryMethod: Both Abstract Factory and Factory Method create objects. But Factory Method do it through inheritance
+and Abstract Factory through object composition.
+
+So to create objects using Factory Method, you need to extend a class and override factory method, which creates objects.
+Whole point of Factory Method is to use subclass to do creation
+It keeps clients decoupled from concrete type
+
+Abstract Factory provides abstract type for creating a family of products.
+Subclass of this type define how those products are produced.
+It keeps client decoupled from actual concrete product they use

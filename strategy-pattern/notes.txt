@@ -1,0 +1,2 @@
+Defines family of algorithms, encapsulates each one and make them interchangable.
+Strategy lets the algorithm vary independently from clients that use it.

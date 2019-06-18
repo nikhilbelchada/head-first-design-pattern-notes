@@ -1,0 +1,70 @@
+Design Principle
+1.Encapsulate what varies
+Identify the aspects of your application that vary and separate them from what stays the same.
+i.e
+Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don't
+
+2.Program to an interface not an implementation
+eg.
+Programming to implementation
+Dog d = new Dog();
+d.bark();
+
+Programming to interface/supertype
+Animal animal = new Dog();
+animal.makeSound();
+
+3.Favour Composition over inheritance
+Eg. Strategry Pattern
+Each duck has FlyBehaviour and QuackBehaviour to which it delegates flying and quacking
+When you put two classes together lke this, you are using composition. Instead of inheriting their behaviour, the duck
+get their behaviour by being composed with right behaviour
+It lets you encapsulate family of algorithms into their own classes but lets you change behaviour on runtime
+
+
+4.Strive for loosely coupled designs between objects that interact
+Loosely coupled desings allow us to build flexible OO systems that can handle change because they minimize the interdependency between objects.
+Eg. Observer Pattern
+
+5.Open Closed Principle
+classes should be  open for extension, but closed for modification
+
+6.Dependency Inversion Principle
+Depend upon abstractions. Do not depend upon concrete classes.
+At the first it looks like program to interface not an implementation.
+It is similar however, however, it makes an even stronger statement about abstraction.
+It suggests that high-level components should not depens on our low-level components; rather they should both depend on abstractions.
+For example. PizzaStore is a high-level component because its behaviour is defined in terms of pizza - it creates
+all different pizza objects, prepares, bakes, etc, while the pizza it uses are low level components.
+Clearly pizzastore is dependent on concrete pizza classes.
+
+This principle tells us we should instead write our code so that we are depending on abstractions, not concrete classes.
+which varies with our code for pizza store
+
+where is inversion in dependency inversion principle?
+It inverts the way typically you might think about OO design.
+
+Low level components now depend on higher level abstraction. likewise high level
+is also tied to same abstraction. so this top to bottom dependency has inverted itself
+
+7. Depend on abstraction. Do not depend on concrete classes.
+
+8. Principle of Least Knowledge
+Principle of Least Knowledge talk only to your immediate friends
+Means when you design a system, for any objects be careful of number of classes it interacts with, this prevents
+us from having large number of classes coupled together so thats changes in one part of system cascade to other parts
+
+9. Hollywood Principle
+Don't call us, we'll call you.
+
+Gives a way to prevent "dependency rot". Dependency rot happens when you have high-level components depending on low-
+level components depending on high-level components depending on sideways components depending on low-level components,
+and so on.
+
+With HP, we allow low-level components to hook themselves into system, but high-level components determine when they are needed
+
+In other words, high level components give low level components ad don't call us, we'll call you treatment.
+page 323
+
+10. Single Responsibility Principle
+A class should have only one reason to change

@@ -1,0 +1,6 @@
+Composite Pattern
+allow you to compose objects into tree strucutures to represent part-whole hierarchies.
+Compoiste lets client treat individual objects and compositions of objects uniformly.
+
+If we have a tree strucuture of menus, submenus, and perhaps subsubmenus along with menu items, then any
+menu is a "composition" because it can contain both other menus and menu items.

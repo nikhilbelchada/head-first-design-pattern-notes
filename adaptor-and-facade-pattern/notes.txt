@@ -1,0 +1,5 @@
+Adapter and Facade Pattern
+Converts the interface of a class into another interface the clients expect. adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+Adapter pattern's role is to convert one interface into another.
+
+There are actually two kinds of adapters Object and Class.
